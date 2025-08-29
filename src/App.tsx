@@ -1,12 +1,12 @@
-import { Button } from "./stories/Button/Button";
-import Title from "./stories/Headings/Title";
+import { Button } from "./stories/Button";
+import { Title } from "./stories/Title";
 
 function App() {
   return (
     <div>
       <p className="text-red-600">Hello</p>
       <Button label="Update" />
-      <Title className=" bg-amber-300">Hello</Title>
+      <Title className=" bg-amber-300 ">Hello</Title>
     </div>
   );
 }
