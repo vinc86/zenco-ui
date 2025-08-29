@@ -1,4 +1,4 @@
-# Component Library
+# ZENCO Component Library
 
 Component library for personal projects.
 
