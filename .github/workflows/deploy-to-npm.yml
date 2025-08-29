@@ -1,0 +1,10 @@
+name: Deploy to npm
+on:
+  push:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Add your build and deploy steps here
