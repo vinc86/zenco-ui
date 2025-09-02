@@ -17,6 +17,7 @@ jobs:
         run: npm ci
   build:
     runs-on: ubuntu-latest
+    needs: install
     steps:
       - name: Build Package
         run: npm run build
