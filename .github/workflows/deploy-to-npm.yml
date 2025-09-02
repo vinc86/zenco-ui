@@ -1,10 +1,17 @@
-name: Deploy to npm
+name: Deploy to NPM
 on:
   push:
+    branches:
+      - main
+
+env:
+  NPM_ACCESS_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      # Add your build and deploy steps here
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
