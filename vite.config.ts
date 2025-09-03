@@ -2,7 +2,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import dts from "vite-plugin-dts";
 import { peerDependencies } from "./package.json";
 
 // https://vite.dev/config/
@@ -16,7 +15,10 @@ const dirname =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react(), tailwindcss(), dts()],
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
   build: {
     lib: {
       entry: "./src/index.ts",
@@ -28,7 +30,7 @@ export default defineConfig({
       external: [...Object.keys(peerDependencies)],
     },
     sourcemap: true,
-    emptyOutDir: true,
+    emptyOutDir: false,
   },
   test: {
     projects: [
