@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -p tsconfig.build.json && cp dist/types.d.ts dist/index.d.ts && vite build",
     "lint": "eslint .",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "preview": "vite preview",
