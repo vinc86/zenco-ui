@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/types.ts",
+    "src/components/**/*.tsx",
+    "src/utils/**/*.ts",
+    "src/css.d.ts"
+  ],
+  "exclude": [
+    "**/*.stories.ts",
+    "**/*.test.ts"
+  ]
+}
