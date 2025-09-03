@@ -1,2 +1,2 @@
-export { Button } from "./stories/Button";
-export { Title } from "./stories/Title";
+export { Button, type ButtonProps } from "./components/Button";
+export { Heading, type HeadingProps } from "./components/Heading";
