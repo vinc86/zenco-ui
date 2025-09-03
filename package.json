@@ -1,6 +1,6 @@
 {
   "name": "zenco-ui",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -20,6 +20,15 @@
   "files": [
     "/dist/"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./styles": "./dist/zenco-ui.css",
+    "./package.json": "./package.json"
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
     "clsx": "^2.1.1",
