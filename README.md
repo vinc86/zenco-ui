@@ -72,7 +72,7 @@ import { Button } from "zenco-ui"
   design="filled"
   size="large"
   shape="rounded"
-  loading={isLoading}
+  isLoading={isLoading}
   disabled={isDisabled}
   onClick={handleClick}
 >
@@ -83,13 +83,13 @@ import { Button } from "zenco-ui"
 ### Props
 
 - `design?: "filled" | "outline" | "ghost"` - Button design variant (default: "filled")
-- `color?: "blue" | "red" | "green" | "yellow" | "gray"` - Button color (default: "blue")
+- `color?: "blue" | "red"` - Button color (default: "blue")
 
 > **Note:** Additional color variants are currently in development.
 
 - `size?: "small" | "medium" | "large"` - Button size (default: "medium")  
 - `shape?: "square" | "rounded" | "pill"` - Button corner style (default: "rounded")
-- `loading?: boolean` - Shows loading spinner and disables interaction (default: false)
+- `isLoading?: boolean` - Shows loading spinner and disables interaction (default: false)
 - `disabled?: boolean` - Disables the button (default: false)
 - `onClick?: () => void` - Click event handler
 - `children` - Button content (text, icons, etc.)
@@ -107,7 +107,7 @@ import { Spinner } from "zenco-ui"
 <Spinner />
 
 // In a button
-<Button loading>
+<Button isLoading>
   Loading...
 </Button>
 ```
