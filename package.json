@@ -1,6 +1,6 @@
 {
   "name": "zenco-ui",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -p tsconfig.build.json && cp dist/types.d.ts dist/index.d.ts && vite build",
+    "build": "rm -rf ./dist && tsc -p tsconfig.build.json && cp dist/types.d.ts dist/index.d.ts && vite build",
     "lint": "eslint .",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
     "preview": "vite preview",
@@ -18,26 +18,27 @@
     "build-storybook": "storybook build"
   },
   "files": [
-    "/dist/"
+    "dist"
   ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js"
+      "require": "./dist/index.umd.js"
     },
-    "./styles": "./dist/zenco-ui.css",
+    "./dist/index.css": "./dist/index.css",
+    "./styles.css": "./dist/index.css",
     "./package.json": "./package.json"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
     "clsx": "^2.1.1",
-    "react-dom": "^19.1.1",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.12"
   },
   "peerDependencies": {
-    "react": "^19.1.1"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.1",
