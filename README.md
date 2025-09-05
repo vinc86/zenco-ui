@@ -13,7 +13,7 @@ npm install zenco-ui
 Import components and styles in your React application:
 
 ```jsx
-import { Button, Heading } from "zenco-ui"
+import { Button, Heading, Spinner } from "zenco-ui"
 import "zenco-ui/styles.css" // Required: Import the styles
 
 function App() {
@@ -21,15 +21,18 @@ function App() {
     <div>
       <Heading level="1">Welcome to ZENCO UI</Heading>
       <Button 
-        primary 
+        color="blue"
+        design="filled" 
         size="large" 
-        label="Get Started" 
         onClick={() => console.log('Clicked!')}
-      />
+      >
+        Get Started
+      </Button>
     </div>
   )
 }
 ```
+
 ## Components
 
 ### Heading
@@ -45,8 +48,77 @@ import { Heading } from "zenco-ui"
 ```
 
 **Props:**
+
 - `level?: "1" | "2" | "3" | "4" | "5" | "6"` - Heading level (default: "1")
-- `children: ReactNode` - Heading content
+- `children` - Text content for the heading
+
+## Button
+
+A versatile button component with multiple design systems, supporting various visual styles and interaction states.
+
+### Usage
+
+```jsx
+import { Button } from "zenco-ui"
+
+// Basic usage
+<Button onClick={handleClick}>
+  Click me
+</Button>
+
+// Customized button
+<Button 
+  color="blue"
+  design="filled"
+  size="large"
+  shape="rounded"
+  loading={isLoading}
+  disabled={isDisabled}
+  onClick={handleClick}
+>
+  Submit
+</Button>
+```
+
+### Props
+
+- `design?: "filled" | "outline" | "ghost"` - Button design variant (default: "filled")
+- `color?: "blue" | "red" | "green" | "yellow" | "gray"` - Button color (default: "blue")
+
+> **Note:** Additional color variants are currently in development.
+
+- `size?: "small" | "medium" | "large"` - Button size (default: "medium")  
+- `shape?: "square" | "rounded" | "pill"` - Button corner style (default: "rounded")
+- `loading?: boolean` - Shows loading spinner and disables interaction (default: false)
+- `disabled?: boolean` - Disables the button (default: false)
+- `onClick?: () => void` - Click event handler
+- `children` - Button content (text, icons, etc.)
+
+## Spinner
+
+A loading indicator component that provides visual feedback during asynchronous operations.
+
+### Usage
+
+```jsx
+import { Spinner } from "zenco-ui"
+
+// Basic usage
+<Spinner />
+
+// In a button
+<Button loading>
+  Loading...
+</Button>
+```
+
+### Props
+
+- `className?: string` - Additional CSS classes for custom styling
+- Standard HTML div attributes are also supported
+
+## Styling
+
 - `className?: string` - Additional CSS classes
 
 ## Styling
