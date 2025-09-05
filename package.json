@@ -1,13 +1,32 @@
 {
   "name": "zenco-ui",
-  "version": "1.0.7",
+  "version": "1.0.8",
+  "description": "A modern React component library built with TypeScript and Tailwind CSS",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": "22"
+    "node": ">=20.19.0"
   },
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "tailwind",
+    "typescript",
+    "component-library",
+    "library"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinc86/zenco-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vinc86/zenco-ui/issues"
+  },
+  "homepage": "https://github.com/vinc86/zenco-ui#readme",
   "scripts": {
     "dev": "vite",
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json && cp dist/types.d.ts dist/index.d.ts && vite build",
@@ -24,10 +43,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
+      "require": "./dist/index.cjs.js"
     },
-    "./dist/index.css": "./dist/index.css",
-    "./styles.css": "./dist/index.css",
+    "./dist/zenco-ui.css": "./dist/zenco-ui.css",
+    "./styles.css": "./dist/zenco-ui.css",
     "./package.json": "./package.json"
   },
   "dependencies": {
