@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  --animate-spin-1: spin 1s ease-in-out infinite;
+  --animate-spin-1/2: spin 1.2s ease-in-out infinite;
+  --animate-spin-0/9: spin 0.9s ease-in-out infinite;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  --rounded-small: border-radius: 7px;
+}
