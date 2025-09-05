@@ -18,10 +18,10 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
     lib: {
-      entry: "./src/index.ts",
+      entry: "./lib/index.ts",
       name: "ZencoUI",
       fileName: (format) => `index.${format}.js`,
-      formats: ["cjs", "es"],
+      formats: ["cjs", "es", "umd"],
     },
     rollupOptions: {
       external: [...Object.keys(peerDependencies)],

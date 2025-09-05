@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { cn } from "../../../lib/utils/cn";
+import { cn } from "../../utils/cn";
 
 type Level = "1" | "2" | "3" | "4" | "5" | "6";
 type HeadingTag = `h${Level}`;
